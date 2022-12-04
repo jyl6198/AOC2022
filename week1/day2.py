@@ -1,20 +1,10 @@
-def part_1(guide):
+def calculate_totalscore(guide):
     with open("day2_input.txt", "r") as file:
         score = 0
         for line in file.readlines():
             opp, player = line.strip().split(' ')
             score += guide[opp][player] + guide[player]
     return score
-
-
-def part_2(guide):
-    with open("day2_input.txt", "r") as file:
-        score = 0
-        for line in file.readlines():
-            opp, player = line.strip().split(' ')
-            score += guide[opp][player] + guide[player]
-    return score
-
 
 def main():
     guide_1 = {
@@ -35,7 +25,7 @@ def main():
         },
         "X": 1, "Y": 2, "Z": 3
     }
-    print(part_1(guide_1))
+    print(calculate_totalscore(guide_1))
 
     guide_2 = {
         "A": {
@@ -55,7 +45,7 @@ def main():
         },
         "X": 0, "Y": 3, "Z": 6
     }
-    print(part_2(guide_2))
+    print(calculate_totalscore(guide_2))
 
 
 if __name__ == "__main__":
